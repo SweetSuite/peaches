@@ -1,0 +1,27 @@
+{
+  "name": "peaches",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./build/main.js",
+    "build": "backpack build",
+    "dev": "backpack dev"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "backpack-core": "^0.7.0",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SweetSuite/peaches.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SweetSuite/peaches/issues"
+  },
+  "homepage": "https://github.com/SweetSuite/peaches#readme",
+  "description": ""
+}
