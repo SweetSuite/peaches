@@ -4,7 +4,7 @@ import user from './user/fields';
 
 const RootSchema = new GraphQLObjectType({
   name: 'RootQuery',
-  descripton: 'RootQuery description',
+  descripton: 'Root Query',
   fields: {
     user,
   },
