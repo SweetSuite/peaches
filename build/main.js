@@ -62,128 +62,73 @@ module.exports =
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = require("graphql");
+module.exports = __webpack_require__(1);
+
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(2);
-
-
-/***/ }),
-/* 2 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_dotenv__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_dotenv__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_dotenv___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_dotenv__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_express__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_express__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_express___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_express__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_express_graphql__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_express_graphql__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_express_graphql___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_express_graphql__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models__ = __webpack_require__(6);
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_sequelize__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_sequelize___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_sequelize__);
 
 
 
 
 
 __WEBPACK_IMPORTED_MODULE_0_dotenv___default.a.config();
-const { PORT } = process.env;
+const { PORT, DB_NAME, DB_HOST, DB_USER, DB_PASSWORD } = process.env;
 
 const app = __WEBPACK_IMPORTED_MODULE_1_express___default()();
 
-app.use('/graphql', __WEBPACK_IMPORTED_MODULE_2_express_graphql___default()({
-  schema: __WEBPACK_IMPORTED_MODULE_3__models__["a" /* default */],
-  graphiql: true
-}));
+// app.use(
+//   '/',
+//   expressGraphQL({
+//     schema,
+//     graphiql: true,
+//   }),
+// );
 
 app.listen(PORT, () => console.log(`> Listening on port ${PORT}`));
 
 /***/ }),
-/* 3 */
+/* 2 */
 /***/ (function(module, exports) {
 
 module.exports = require("dotenv");
 
 /***/ }),
-/* 4 */
+/* 3 */
 /***/ (function(module, exports) {
 
 module.exports = require("express");
 
 /***/ }),
-/* 5 */
+/* 4 */
 /***/ (function(module, exports) {
 
 module.exports = require("express-graphql");
 
 /***/ }),
-/* 6 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/* 5 */
+/***/ (function(module, exports) {
 
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_graphql__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_graphql___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_graphql__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__user_fields__ = __webpack_require__(7);
-
-
-
-
-const RootSchema = new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLObjectType"]({
-  name: 'RootQuery',
-  descripton: 'RootQuery description',
-  fields: {
-    user: __WEBPACK_IMPORTED_MODULE_1__user_fields__["a" /* default */]
-  }
-});
-
-const schema = new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLSchema"]({ query: RootSchema });
-
-/* harmony default export */ __webpack_exports__["a"] = (schema);
-
-/***/ }),
-/* 7 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__type__ = __webpack_require__(8);
-
-
-const UserFields = {
-  type: __WEBPACK_IMPORTED_MODULE_0__type__["a" /* default */],
-  resolve: () => user
-};
-
-/* harmony default export */ __webpack_exports__["a"] = (UserFields);
-
-/***/ }),
-/* 8 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_graphql__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_graphql___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_graphql__);
-
-
-const UserType = new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLObjectType"]({
-  name: 'UserType',
-  description: 'UserType description',
-  fields: {
-    email: { type: new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLNonNull"](__WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLString"]) }
-  }
-});
-
-/* harmony default export */ __webpack_exports__["a"] = (UserType);
+module.exports = require("sequelize");
 
 /***/ })
 /******/ ]);
