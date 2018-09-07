@@ -86,6 +86,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_express_graphql___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_express_graphql__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_sequelize__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_sequelize___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_sequelize__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_graphql__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_graphql___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_graphql__);
+
 
 
 
@@ -96,13 +99,10 @@ const { PORT, DB_NAME, DB_HOST, DB_USER, DB_PASSWORD } = process.env;
 
 const app = __WEBPACK_IMPORTED_MODULE_1_express___default()();
 
-// app.use(
-//   '/',
-//   expressGraphQL({
-//     schema,
-//     graphiql: true,
-//   }),
-// );
+app.use('/', __WEBPACK_IMPORTED_MODULE_2_express_graphql___default()({
+  schema: __WEBPACK_IMPORTED_MODULE_4_graphql___default.a,
+  graphiql: true
+}));
 
 app.listen(PORT, () => console.log(`> Listening on port ${PORT}`));
 
@@ -129,6 +129,12 @@ module.exports = require("express-graphql");
 /***/ (function(module, exports) {
 
 module.exports = require("sequelize");
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports) {
+
+module.exports = require("graphql");
 
 /***/ })
 /******/ ]);
