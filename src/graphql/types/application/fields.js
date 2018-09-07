@@ -1,4 +1,10 @@
-import { ShirtSizeEnumType, GenderEnumType } from '../enums';
+import { GraphQLString } from 'graphql';
+
+import {
+  ShirtSizeEnumType,
+  GenderEnumType,
+  LevelOfStudyEnumType,
+} from '../enums';
 
 const ApplicationFields = {
   firstName: {
@@ -10,7 +16,7 @@ const ApplicationFields = {
     resolve: application => application.lastName,
   },
   levelOfStudy: {
-    type: LevelOfStudyEnum,
+    type: LevelOfStudyEnumType,
     resolve: application => application.levelOfStudy,
   },
   major: {
@@ -26,3 +32,5 @@ const ApplicationFields = {
     resolve: application => application.gender,
   },
 };
+
+export default ApplicationFields;
