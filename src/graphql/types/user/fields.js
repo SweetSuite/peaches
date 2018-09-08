@@ -8,7 +8,7 @@ const UserFields = {
     resolve: user => user.email,
   },
   password: {
-    type: new GraphQLNonNull(GraphQLString),
+    type: GraphQLString,
     resolve: user => user.password,
   },
   application: {

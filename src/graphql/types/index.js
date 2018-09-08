@@ -1,15 +1,4 @@
-import { GraphQLSchema, GraphQLObjectType } from 'graphql';
+import UserType from './user/type';
+import ApplicationType from './application/type';
 
-import user from './user/fields';
-
-const RootSchema = new GraphQLObjectType({
-  name: 'RootQuery',
-  descripton: 'Root Query',
-  fields: {
-    user,
-  },
-});
-
-const schema = new GraphQLSchema({ query: RootSchema });
-
-export default schema;
+export { UserType, ApplicationType };

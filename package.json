@@ -12,11 +12,18 @@
   "dependencies": {
     "backpack-core": "^0.7.0",
     "dotenv": "^6.0.0",
+    "eslint-restricted-globals": "^0.1.1",
     "express": "^4.16.3",
     "express-graphql": "^0.6.12",
-    "graphql": "^14.0.0"
+    "graphql": "^14.0.0",
+    "object.assign": "^4.1.0",
+    "object.entries": "^1.0.4"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^5.5.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SweetSuite/peaches.git"

@@ -5,9 +5,7 @@ import UserFields from './fields';
 const UserType = new GraphQLObjectType({
   name: 'UserType',
   description: 'User Type',
-  fields: {
-    UserFields,
-  },
+  fields: UserFields,
 });
 
 export default UserType;

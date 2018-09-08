@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 import express from 'express';
 import expressGraphQL from 'express-graphql';
 
-import schema from './models';
+import schema from './graphql';
 
 dotenv.config();
 const { PORT } = process.env;
