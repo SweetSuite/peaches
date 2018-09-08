@@ -4,8 +4,7 @@ import expressGraphQL from 'express-graphql';
 import schema from './graphql';
 
 dotenv.config();
-const { PORT, DB_NAME, DB_HOST, DB_USER, DB_PASSWORD } = process.env;
-
+const { PORT } = process.env;
 const app = express();
 
 app.use(
