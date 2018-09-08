@@ -1,7 +1,6 @@
 import dotenv from 'dotenv';
 import express from 'express';
 import expressGraphQL from 'express-graphql';
-import { Sequelize } from 'sequelize';
 import schema from './graphql';
 
 dotenv.config();
