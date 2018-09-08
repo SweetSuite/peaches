@@ -5,9 +5,7 @@ import ApplicationFields from './fields';
 const ApplicationType = new GraphQLObjectType({
   name: 'ApplicationType',
   description: 'Application Type',
-  fields: {
-    ApplicationFields,
-  },
+  fields: ApplicationFields,
 });
 
 export default ApplicationType;

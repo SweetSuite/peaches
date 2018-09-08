@@ -6,8 +6,14 @@ const RootSchema = new GraphQLObjectType({
   name: 'RootQuery',
   descripton: 'Root Query',
   fields: {
-    UserType,
-    ApplicationType,
+    user: {
+      type: UserType,
+      resolve: () => console.log('User Queried'),
+    },
+    application: {
+      type: ApplicationType,
+      resolve: () => console.log('Application Queried'),
+    },
   },
 });
 

@@ -86,9 +86,7 @@ module.exports = require("graphql");
 const ApplicationType = new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLObjectType"]({
   name: 'ApplicationType',
   description: 'Application Type',
-  fields: {
-    ApplicationFields: __WEBPACK_IMPORTED_MODULE_1__fields__["a" /* default */]
-  }
+  fields: __WEBPACK_IMPORTED_MODULE_1__fields__["a" /* default */]
 });
 
 /* harmony default export */ __webpack_exports__["a"] = (ApplicationType);
@@ -165,8 +163,14 @@ const RootSchema = new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLObjectType"
   name: 'RootQuery',
   descripton: 'Root Query',
   fields: {
-    UserType: __WEBPACK_IMPORTED_MODULE_1__types__["b" /* UserType */],
-    ApplicationType: __WEBPACK_IMPORTED_MODULE_1__types__["a" /* ApplicationType */]
+    user: {
+      type: __WEBPACK_IMPORTED_MODULE_1__types__["b" /* UserType */],
+      resolve: () => console.log('User Queried')
+    },
+    application: {
+      type: __WEBPACK_IMPORTED_MODULE_1__types__["a" /* ApplicationType */],
+      resolve: () => console.log('Application Queried')
+    }
   }
 });
 
