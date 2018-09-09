@@ -1,6 +1,6 @@
 import dotenv from 'dotenv';
 import express from 'express';
-import expressGraphQL from 'express-graphql';
+import graphqlHTTP from 'express-graphql';
 
 import schema from './graphql';
 
@@ -11,7 +11,7 @@ const app = express();
 
 app.use(
   '/',
-  expressGraphQL({
+  graphqlHTTP({
     schema,
     graphiql: true,
   }),
