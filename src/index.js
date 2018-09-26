@@ -1,20 +1,15 @@
 import dotenv from 'dotenv';
-import express from 'express';
-import graphqlHTTP from 'express-graphql';
+import { GraphQLServer } from 'graphql-yoga';
 
-import schema from './graphql';
+import resolvers from './graphql/resolvers';
+import typeDefs from './graphql/types.gql';
 
 dotenv.config();
 const { PORT } = process.env;
 
-const app = express();
+const server = new GraphQLServer({
+  typeDefs,
+  resolvers,
+});
 
-app.use(
-  '/',
-  graphqlHTTP({
-    schema,
-    graphiql: true,
-  }),
-);
-
-app.listen(PORT, () => console.log(`> Listening on port ${PORT}`));
+server.start({ port: PORT }, () => console.log(`> Listening on port ${PORT}`));

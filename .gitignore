@@ -1,6 +1,11 @@
-node_modules
+# Deployment
 build
 
+# Secret Management
 .env
+
+# Package Management
+node_modules
 package-lock.json
 yarn.lock
+yarn-error.log
