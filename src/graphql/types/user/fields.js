@@ -15,6 +15,10 @@ const UserFields = {
     type: new GraphQLNonNull(ApplicationType),
     resolve: user => user.application,
   },
+  verified: {
+    type: new GraphQLNonNull(GraphQLBoolean),
+    resolve: user => user.verified
+  }
 };
 
 export default UserFields;

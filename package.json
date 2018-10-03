@@ -11,15 +11,17 @@
   "license": "ISC",
   "dependencies": {
     "backpack-core": "^0.7.0",
+    "bcrypt": "^3.0.1",
     "dotenv": "^6.0.0",
     "eslint-restricted-globals": "^0.1.1",
     "express": "^4.16.3",
     "express-graphql": "^0.6.12",
     "graphql": "^14.0.0",
-    "pg": "^7.4.3",
-    "sequelize": "^4.38.0",
+    "jsonwebtoken": "^8.3.0",
     "object.assign": "^4.1.0",
-    "object.entries": "^1.0.4"
+    "object.entries": "^1.0.4",
+    "pg": "^7.4.3",
+    "sequelize": "^4.38.0"
   },
   "devDependencies": {
     "eslint": "^5.5.0",
