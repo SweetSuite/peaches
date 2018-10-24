@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node ./build/main.js",
     "build": "backpack build",
-    "dev": "backpack dev"
+    "dev": "backpack dev",
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
@@ -24,9 +25,14 @@
     "sequelize": "^4.38.0"
   },
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-jest": "^23.6.0",
     "eslint": "^5.5.0",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.14.0"
+    "eslint-plugin-import": "^2.14.0",
+    "jest": "^23.6.0",
+    "sqlite3": "^4.0.3",
+    "supertest": "^3.3.0"
   },
   "repository": {
     "type": "git",

@@ -1,10 +1,8 @@
-import ApplicationModel from './application';
-
 const UserModel = (sequelize, Sequelize) => {
   return sequelize.define('user', {
-    email: { type: Sequelize.STRING },
-    password: { type: Sequelize.STRING },
-    verified: { type: Sequelize.BOOLEAN },
+    email: { type: Sequelize.STRING, unique: true, allowNull: false },
+    password: { type: Sequelize.STRING, allowNull: false },
+    verified: { type: Sequelize.BOOLEAN, allowNull: false },
     application_id: { type: Sequelize.INTEGER },
   });
 };

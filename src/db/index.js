@@ -2,14 +2,14 @@ import dotenv from 'dotenv';
 import { Sequelize } from 'sequelize';
 
 dotenv.config();
-const { PORT, DB_NAME, DB_HOST, DB_USER, DB_PASSWORD } = process.env;
+const { PORT, DB_NAME, DB_HOST, DB_USER, DB_PASSWORD, STAGE } = process.env;
 
 const sequelize = new Sequelize(DB_NAME, DB_USER, DB_PASSWORD, {
   host: DB_HOST,
   dialectOptions: {
-    ssl: true,
+    ssl: STAGE === 'PROD',
   },
-  dialect: 'postgres',
+  dialect: STAGE === 'DEV' ? 'sqlite' : 'postgres',
   operatorsAliases: false,
 });
 
